@@ -30,34 +30,34 @@ VALUES
 
 ##Query SQL
 
---1 Data Exploration
+##1 Data Exploration
 SELECT *
 FROM superstore
 ORDER BY price;
 
---2 Finding Statistics data by Categories
+##2 Finding Statistics data by Categories
 SELECT category, SUM(price) AS Total_Sales, AVG(price) AS Average_Price, MAX(price) AS Max_Price, MIN(price) AS Min_Price
 FROM superstore
 GROUP BY category;
 
---3 Finding Averages_ratings by categories
+##3 Finding Averages_ratings by categories
 SELECT category, MAX(average_rating) AS Max_Rating, MIN(average_rating) Min_Rating, AVG(average_rating) Average_Rating
 FROM superstore
 GROUP BY category;
 
---4 Checking statistics from Category Kitchen Supplies
+##4 Checking statistics from Category Kitchen Supplies
 SELECT AVG(price) AS average_price, MAX(price) AS max_price, MIN(price) AS min_price, COUNT(*) AS total_items
 FROM superstore
 WHERE category="Kitchen Supplies"
 GROUP BY category, item_name;
 
---5 Finding Price and Rating by item From Kitchen Supplies
+##5 Finding Price and Rating by item From Kitchen Supplies
 SELECT item_name AS Item, price AS Price, average_rating AS Rating
 FROM superstore
 WHERE category = "Kitchen Supplies"
 ORDER BY price DESC;
 
---6 Finding product with more sales
+##6 Finding product with more sales
 SELECT item_name, COUNT(*) AS total_sales
 FROM superstore
 GROUP BY item_name
